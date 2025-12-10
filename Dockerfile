@@ -12,7 +12,7 @@ RUN ./mvnw clean package -DskipTests
 
 ###TEST
 FROM builder as tester
-RUN ./nvmw test
+RUN ./mvnw test
 
 ### Run
 FROM amazoncorretto:17-alpine3.22-jdk as runner
