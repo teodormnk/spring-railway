@@ -10,6 +10,10 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 RUN ./mvnw clean package -DskipTests
 
+###TEST
+FROM builder as tester
+RUN ./nvmw test
+
 ### Run
 FROM amazoncorretto:17-alpine3.22-jdk as runner
 
